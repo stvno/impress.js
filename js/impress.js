@@ -23,7 +23,7 @@
 // Let me show you the cogs that make impress.js run...
 (function ( document, window ) {
     'use strict';
-    
+  
     // HELPER FUNCTIONS
     
     // `pfx` is a function that takes a standard CSS property name as a parameter
