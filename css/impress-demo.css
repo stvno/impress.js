@@ -47,6 +47,7 @@ time, mark, audio, video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    color: #eeeeec;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -188,7 +189,7 @@ a:focus {
 */
 .impress-enabled .step {
     margin: 0;
-    opacity: 0.3;
+    opacity: 0.05;
 
     -webkit-transition: opacity 1s;
     -moz-transition:    opacity 1s;
@@ -199,6 +200,9 @@ a:focus {
 
 .impress-enabled .step.active { opacity: 1 }
 
+.impress-enabled .animation.past { opacity: 0.8 }
+
+.impress-enabled .hide.past { opacity: 0 }
 /*
     These 'slide' step styles were heavily inspired by HTML5 Slides:
     http://html5slides.googlecode.com/svn/trunk/styles.css
@@ -235,6 +239,15 @@ a:focus {
 .substep {
     transition: opacity 1s ease 0s;
 }
+.substep.ws-img.hide.past {
+  opacity: 0.1;
+}
+.substep.idb-img.hide.past {
+  opacity: 0;
+}
+.animation {
+ color: rgb(238,238,236);
+}
 .slide q {
     display: block;
     font-size: 50px;
@@ -248,14 +261,119 @@ a:focus {
     color: rgb(245, 121, 0);
     font-weight: 600;
 }
+.orange {
+      color: rgb(245, 121, 0);
+}
+.moveright {
+  margin-left: 100px;
+}
+.moveleft {
+  margin-left: -100px;
+}
+.moveright2 {
+  margin-left: 200px;
+}
+.putright {
+position: absolute;
+right:100px;
 
+}
+.putdown {
+  top: 100px;
+position: absolute;
+}
+.putup {
+ position: absolute;
+top: -100px;;
+}
 .slide .note {
     font-size: 30px;
     bottom: 30px;
 position: absolute;
 right: 30px;
 }
-
+.me-rotate {
+  font-size: 50px
+}
 .impress-enabled          { pointer-events: none }
 .impress-enabled #impress { pointer-events: auto }
+#map {
+border: solid 1px rgb(245, 121, 0);
+height: 500px;
+left: -44px;
+position: absolute;
+width: 980px;
+top: -330px;
+}
+
+.olControlAttribution {
+
+  font-size: 15px !important;
+  color: black;
+}
+.olPopupContent {
+  background: rgb(46, 52, 54);
+  font-size:15px;
+}
+
+#nodemap {
+ height: 400px;
+width: 500px;
+z-index: 10000;
+float: right;
+background: rgba(46, 52, 54, 0.8);
+border: solid 1px rgb(245, 121, 0);
+bottom: -325px;
+right: -38px;
+position: absolute;
+}
+.peer {
+  fill: #eeeeec;
+  font-size: 12px;
+}
+.herd {
+  fill: rgb(245, 121, 0);
+  font-size: 12px;
+}
+
+#heartbeat .nv-point-paths path {
+  stroke: #aaa;
+  stroke-opacity: 0;
+  fill: #eee;
+  fill-opacity: 0;
+}
+#heartbeat .nv-line {
+    fill:  rgba(46, 52, 54,0);
+   stroke: #eeeeec; 
+}
+#heartbeat circle.nv-point {
+  stroke: rgb(245, 121, 0);
+}
+.nv-legendWrap {
+  display: none;
+}
+#heartbeat {
+font-size: 12px;
+height: 200px;
+width: 500px;
+position: absolute;
+top: 200px;
+left: -100px;
+}
+.url {
+top: -320px;
+position: absolute;
+color: #eeeeec;
+}
+.ws-img {
+  position:absolute;
+  top: -100px;
+  left: -50px;
+}
+
+.idb-img {
+  position: absolute;
+top: -20px;
+left: 40px;
+}
 
