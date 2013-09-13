@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>COW - the presentation</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+      <script type="text/javascript" src="../cow/lib/nvd3_min.js"></script>
+    
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    
+   <script src="http://openlayers.org/api/OpenLayers.js" type="text/javascript"></script>
+    
+    <script src="../cow/lib/jquery.indexeddb/jquery.indexeddb.min.js" type="text/javascript"></script>
+    <script src="../cow/src/cow.core.js" type="text/javascript"></script>
+    <script src="../cow/src/cow.websocket.js" type="text/javascript"></script>
+    <script src="../cow/src/cow.peer.js" type="text/javascript"></script>
+    <script src="../cow/src/cow.herd.js" type="text/javascript"></script>
+    <script src="../cow/src/cow.featurestore.js" type="text/javascript"></script>
+    <script src="../cow/src/cow.localdbase.js" type="text/javascript"></script>
+    <script src="../cow/src/cow.geolocator.js" type="text/javascript"></script>
+        <script src="../cow/demo/scripts/cookies.js" type="text/javascript"></script>
+     <script src="../cow/demo/scripts/m.olmapwidget.js" type="text/javascript"></script>
+     <script src="../cow/demo/scripts/nodemap.js" type="text/javascript"></script>
+     <script src="../cow/demo/scripts/monitorwidget.js" type="text/javascript"></script>
+       <script src="../cow/demo/scripts/d3layer.js" type="text/javascript"></script>
+  <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.3"></script>
+    <meta name="description" content="cow is a concurrent online webgis which allows multiple users to simultaneously edit a map" />
+    <meta name="author" content="Steven Ottens" />
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600' rel='stylesheet' type='text/css'>
+
+
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+    
+</div>
+
+
+<div id="impress">
+
+  
+    <div id="start" class="step slide" data-x="-1000" data-y="0">
+        <q><strong>Concurrent Online Webgis</strong> </q>
+                <q>A New Way To Map Together. </q>
+                <span class="note">Steven M. Ottens</span>
+    </div>
+    
+    <div id="me" class="step slide" data-x="0" data-y="0">
+        <span id="me-me" class="me-rotate">me</span>
+        
+        <q>
+          <UL>
+            <li class="substep"> <img src="css/img/logo.png"/></li>
+            <br/>
+            <li class="substep">map interactions</li>       
+          </UL>
+        </q>
+    </div>
+    <div id="cow" class="step slide" data-x="1000" data-y="0">
+        <q>
+          <ul>
+            <li class="">&nbsp; </li>
+            <li class="">&nbsp; </li>
+            <li><strong>cow</strong></li>
+            <li class="">&nbsp;</li>
+          </ul>
+        </q>
+    </div>
+    <div id="what-is-cow" class="step slide" data-x="1000" data-y="0">
+        <q>
+          <ul>
+            <li class="">What</li>
+            <li class="">is</li>
+            <li><strong>cow </strong></li>
+            <li class="">?</li>
+          </ul>
+        </q>
+    </div>
+    <div id="google-docs" class="slide step" data-x="1000" data-y="0" data-z="-1" data-rotate-y="180">
+      <q>basically</q>
+      <q class="substep">Google docs for maps</q>
+      </q>
+    </div>
+    <div id="me-peer" class="step animation" data-x="1000" data-y="3000" data-rotate-y="180">
+      <div class="moveright2">
+        <div class="orange">me</div>
+        <div class="moveright"><img src="css/img/me-phone.png"/></div>
+      </div>
+    </div>
+    <div id="friend-peer" class="step animation" data-x="200" data-y="3100" data-rotate-y="180" data-scale="0.6">
+      <div class="moveright2">
+        <div class="">peer</div>
+        <div class="moveright"><img src="css/img/peer-phone.png"/></div>
+     </div>
+    </div>
+    <div id="big-peer" class="step animation" data-x="600" data-y="3500" data-rotate-y="180" data-scale="0.8">
+      <div class="moveright2">
+        <div class="">peer</div>
+        <div class="moveright"><img src="css/img/big-peer.png"/></div>
+      </div>
+    </div>
+    <div id="herd" class="step animation" data-x="600" data-y="3250" data-rotate-y="180" data-scale="1.7">
+      <div class="moveleft"><img src="css/img/herd.png"/></div>     
+      <span class="putright putdown">herd</span>
+    </div>
+    <div id="cash" class="step animation" data-x="-700" data-y="2500" data-rotate-y="180" data-scale="3">
+<div class="moveright2 putup"><img class="putup" src="css/img/cash.png"/></div>     
+
+    </div>
+    <div id="herds" class="step animation"data-x="-1200" data-y="2500" data-rotate-y="180" data-scale="4">
+     <div class=""><img class="" src="css/img/herds.png"/></div>     
+    </div> 
+    
+     <div id="me-peer-extent" class="step animation" data-x="1000" data-y="5000" data-rotate-y="180">
+      <div class="moveright2">
+        <div class="orange">me</div>
+        <div class="moveright"><img src="css/img/me-extent.png"/></div>
+      </div>
+    </div>
+    <div id="friend-peer-extent" class="step animation" data-x="200" data-y="5100" data-rotate-y="180" data-scale="0.6">
+      <div class="moveright2">
+        <div class="">peer</div>
+        <div class="moveright"><img src="css/img/peer-phone.png"/></div>
+     </div>
+    </div>
+    <div id="big-peer-extent" class="step animation" data-x="600" data-y="5500" data-rotate-y="180" data-scale="0.8">
+      <div class="moveright2">
+        <div class="">peer</div>
+        <div class="moveright"><img src="css/img/peer-extent.png"/></div>
+      </div>
+    </div>
+    <div id="overview-extent" class="step animation" data-x="600" data-y="5200" data-rotate-y="180" data-scale="1.7">
+    </div>
+    <div id="playtime" class="step animation" data-x="-2000" data-y="5200" data-rotate-y="0">
+      <div id="map"></div>
+      <div id="connect"></div>
+    </div>
+    <div id="websockets" class="step hide" data-x="-2700" data-y="5250" data-scale="1.5">
+    <q>
+     <span class="url">http://research.geodan.nl/sites/websocket/
+<p>&nbsp;</p><p class="substep orange">secure websockets</p></span>
+       <img class="substep ws-img" src="css/img/websocket-1.png"/> 
+       <img class="substep ws-img" src="css/img/websocket-2.png"/> 
+       <img class="substep ws-img hide" src="css/img/websocket-3.png"/> 
+       <img class="substep ws-img hide" src="css/img/websocket-4.png"/> 
+       <img class="substep ws-img" src="css/img/websocket-7.png"/> 
+       <img class="substep ws-img hide" src="css/img/websocket-5.png"/> 
+       <img class="substep ws-img hide" src="css/img/websocket-6.png"/> 
+       <img class="substep ws-img hide" src="css/img/websocket-8.png"/> 
+       <img class="substep ws-img hide" src="css/img/websocket-3.png"/> 
+       <img class="substep ws-img" src="css/img/websocket-9.png"/> 
+    </div>
+    <div id="indexeddb" class="step hide" data-x="-2700" data-y="5250" data-scale="1.5">
+    <q>
+     <span class="url">http://research.geodan.nl/sites/websocket/
+<p>&nbsp;</p><p class="substep orange">indexedDB</p></span>
+       <img class="substep idb-img hide" src="css/img/idb1.png"/> 
+       <img class="substep idb-img hide" src="css/img/idb2.png"/> 
+       <img class="substep idb-img hide" src="css/img/idb3.png"/> 
+       <img class="substep idb-img hide" src="css/img/idb4.png"/> 
+       <img class="substep idb-img hide" src="css/img/idb2.png"/> 
+        <img class="substep idb-img hide" src="css/img/idb1.png"/> 
+    </div>
+     <div id="technieken" class="step hide" data-x="-2700" data-y="5250" data-scale="1.5">
+    <q>
+     <span class="url">http://research.geodan.nl/sites/websocket/
+<p>&nbsp;</p><p class="substep orange">Geolocation API</p>
+<p>&nbsp;</p><p class="substep orange">D3.js</p>
+<p>&nbsp;</p><p class="substep orange">OpenLayers</p>
+<p>&nbsp;</p><p class="substep orange">node.js  &  haproxy</p>
+</span>
+    </div>
+    <div id="future" class="step " data-x="-3200" data-y="5250" data-scale="2.5" data-rotate-y="60">
+   <span class="orange">future</span>
+
+   </div>
+    
+    <div id="cow"></div>
+<script src="js/impress.js"></script>
+<script src="js/main.js"></script>
+<script>var API = impress();
+API.init();</script>
+</body>
+</html>
+
+
+
