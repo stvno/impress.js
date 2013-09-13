@@ -8,13 +8,16 @@ var geojson_format = new OpenLayers.Format.GeoJSON({
     
      document.addEventListener("impress:stepenter", function (event) {
       if(event.target.id=="me") {
-         $('#me-me').delay(5000).fadeOut(1000)
+         $('#me-me').delay(4000).fadeOut(1000)
           window.setTimeout(function() {
           $('#me-me').text('@stvno').fadeIn(1000)
-          },6000);
+          },5000);
           
       }
       else if(event.target.id=="websocket") { 
+       $('#map').data('cowOlMapWidget').map.updateSize();
+      }
+       else if(event.target.id=="questions") { 
        $('#map').data('cowOlMapWidget').map.updateSize();
       }
       else  if(event.target.id=="playtime") { 
@@ -23,6 +26,7 @@ var geojson_format = new OpenLayers.Format.GeoJSON({
         $('#heartbeat').show();
         $('#nodemap').animate({right:'-38px',bottom:'-325px'});
         }
+       
             }, false);
             
             
@@ -46,6 +50,21 @@ var geojson_format = new OpenLayers.Format.GeoJSON({
         $('#nodemap').animate({right:'-38px',bottom:'-325px'});
 
       }
+      else if(event.target.id=="future") { 
+       
+        $('#map').animate({width:'980px',height:'500px'});
+        $('#map').data('cowOlMapWidget').map.updateSize();
+     
+        $('#nodemap').hide();
+
+      }
+      
+        else if(event.target.id=="questions") { 
+       
+       $('#nodemap').show();
+
+      }
+      
             }, false);
     })(document, window);
     
@@ -54,7 +73,7 @@ var geojson_format = new OpenLayers.Format.GeoJSON({
    // map.invalidateSize();
      $('#cow').cow({
     activeHerd: 0,
-    websocket: {url: 'wss://websocket.geodan.nl:443/'},
+    websocket: {url: 'wss://websocket.geodan.nl:443/foss4g'},
     featurestore: {},
     localdbase: {},
     geolocator: {}
